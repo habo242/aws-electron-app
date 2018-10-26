@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
+        <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="aws2.js"> </script>
+    <meta charset="UTF-8">
+    <title>AWS Manager!</title>
+  </head>
+  <body>
+      <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+
+     
+    
+      <div class="container">
+          <h1 style="color:blueviolet">AWS Manager</h1>
+          <button onclick="printStatuses();this.onclick=null;" >Status check</button>
+          <button onclick="location.reload();" >Refresh</button>
+          <p id="demo"></p> 
+        
+
+          <form>
+            InstanceID: <input type="text" name="instanceId" id="instanceId" placeholder="Instance-ID einfügen">
+           <input type="submit" value="Stop Instance" onclick="stopInstance(document.getElementById('instanceId').value,'right')">
+          </form>
+
+          <form>
+              InstanceID: <input type="text" name="instanceId" id="start_instanceId" placeholder="Instance-ID einfügen">
+             <input type="submit" value="Start Instance" onclick="startInstance(document.getElementById('start_instanceId').value,'right')">
+          </form>
+      </div>
+      
+
+          
+        
+
+
+
+   <!----<script src="aws.js"> </script> -->
+
+    
+     
+  
+    
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
+  </body>
+</html>
