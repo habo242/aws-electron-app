@@ -28,10 +28,34 @@
           <h1 style="color:blueviolet">AWS Manager</h1>
           <button onclick="printStatuses();this.onclick=null;" >Status check</button>
           <button onclick="location.reload();" >Refresh</button>
-          <p id="demo"></p> 
+          
         
 
-         
+          <div class="container">
+                      
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Instance-ID</th>
+                  <th>Public-IP</th>
+                  <th>Instance-Type</th>
+                  <th>Instance State</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="demo"></td>
+                  <td id="instanceid"></td>
+                  <td id="publicIP"></td>
+                  <td id="instancetype"></td>
+                  <td id="instancestate"></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
       </div>
       
 

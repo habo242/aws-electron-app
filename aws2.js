@@ -1,8 +1,8 @@
 var aws = require('aws-sdk');
 
 aws.config.update({
-    accessKeyId: "ACCESSKEY",
-    secretAccessKey: "SECRETKEY",
+    accessKeyId: "",
+    secretAccessKey: "",
     region: "eu-central-1"
 });
 
@@ -28,10 +28,29 @@ function printStatuses() {
                         }
                     }
                    if(instance.State.Name === "stopped"){
-                    document.getElementById("demo").innerHTML +=('\t'+name+ '|' + '\t'+instance.InstanceId.fontcolor("black").bold()+ '|' +'\t'+instance.PublicIpAddress+ '|' +'\t'+instance.InstanceType+ '|' +'\t'+instance.ImageId+ '|' +'\t'+instance.State.Name.fontcolor("red") + "<br>");
-                   } else {
-                    document.getElementById("demo").innerHTML +=('\t'+name+ '|' + '\t'+instance.InstanceId.fontcolor("black").bold()+ '|' +'\t'+instance.PublicIpAddress+ '|' +'\t'+instance.InstanceType+ '|' +'\t'+instance.ImageId+ '|' +'\t'+instance.State.Name.fontcolor("green") + "<br>");
-                   }
+                   // document.getElementById("instancename").innerHTML +=(name+" <br>");
+                   // document.getElementById("instanceid").innerHTML +=('\t'+instance.InstanceId.fontcolor("black").bold()+" <br>");
+                  //  document.getElementById("publicIP").innerHTML +=('\t'+instance.PublicIpAddress+" <br>");
+                   // document.getElementById("instancetype").innerHTML +=('\t'+instance.InstanceType+" <br>");
+                   //document.getElementById("state").innerHTML +=('\t'+instance.State.Name.fontcolor("red") + "<br>");
+                    document.getElementById("demo").innerHTML +=('\t'+name+ '<br>');
+                    document.getElementById("instanceid").innerHTML +=('\t'+instance.InstanceId.fontcolor("black").bold()+" <br>");
+                    document.getElementById("publicIP").innerHTML +=('\t'+instance.PublicIpAddress + '<br>');
+                    document.getElementById("instancetype").innerHTML +=('\t'+instance.InstanceType+" <br>");
+                    document.getElementById("instancestate").innerHTML +=('\t'+instance.State.Name.fontcolor("red") + "<br>");
+                } else {
+                   // document.getElementById("instancename").innerHTML +=(name+" <br>");
+                   // document.getElementById("instanceid").innerHTML +=('\t'+instance.InstanceId.fontcolor("black").bold()+" <br>");
+                  //  document.getElementById("publicIP").innerHTML +=('\t'+instance.PublicIpAddress+" <br>");
+                   // document.getElementById("instancetype").innerHTML +=('\t'+instance.InstanceType+" <br>");
+                   // document.getElementById("state").innerHTML +=('\t'+instance.State.Name.fontcolor("green") + "<br>");
+                    document.getElementById("demo").innerHTML +=('\t'+name + '<br>');
+                    document.getElementById("instanceid").innerHTML +=('\t'+instance.InstanceId.fontcolor("black").bold()+" <br>");
+                    document.getElementById("publicIP").innerHTML +=('\t'+instance.PublicIpAddress + '<br>');
+                    document.getElementById("instancetype").innerHTML +=('\t'+instance.InstanceType+" <br>");
+                    document.getElementById("instancestate").innerHTML +=('\t'+instance.State.Name.fontcolor("green") + "<br>");
+                    
+                }
                 
                 }
             }
